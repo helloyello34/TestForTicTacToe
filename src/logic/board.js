@@ -2,7 +2,7 @@
 
 const player = require('./player.js')
 
-class board {
+class Board {
   constructor() {
     this.grid = [ 
       [" ", " ", " "],
@@ -16,11 +16,12 @@ class board {
   }
   
   printBoard() {
-    console.log(this.grid[0][0] + " | " + this.grid[0][1] + " | " + this.grid[0][2]);
-    console.log("=========");
-    console.log(this.grid[1][0] + " + " + this.grid[1][1] + " + " + this.grid[1][2]);
-    console.log("=========");
-    console.log(this.grid[2][0] + " | " + this.grid[2][1] + " | " + this.grid[2][2]);
+    console.log(" " + this.grid[0][0] + " | " + this.grid[0][1] + " | " + this.grid[0][2]);
+    console.log("===========");
+    console.log(" " + this.grid[1][0] + " + " + this.grid[1][1] + " + " + this.grid[1][2]);
+    console.log("===========");
+    console.log(" " + this.grid[2][0] + " | " + this.grid[2][1] + " | " + this.grid[2][2]);
+    console.log();
   }
 
   checkWinner() {
@@ -28,7 +29,4 @@ class board {
   }
 }
 
-// var grid = new board();
-// grid.printBoard();
-
-module.exports = board;
+module.exports = Board;

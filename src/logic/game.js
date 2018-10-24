@@ -1,19 +1,19 @@
 // src/logic/game.js
 
-const board = require('./board.js');
-const player = require('./player.js');
+const Board = require('./board.js');
+const Player = require('./player.js');
 
-class game {
+class Game {
   constructor() {
-    this.grid = board();
-    this.x = player("x");
-    this.o = player("o");
+    this.grid = new Board();
+    this.x = new Player("x");
+    this.o = new Player("o");
     this.turnCounter = 0;
     this.turn = false; // false for x, true for o
   }
 
   click(row, col) {
-    if(turn) {
+    if(this.turn) {
       this.grid.changeBoard(row, col, this.o);
     } else {
       this.grid.changeBoard(row, col, this.x);
@@ -23,6 +23,10 @@ class game {
       this.checkWinner()
     }
     this.turn = !this.turn;
+  }
+
+  print() {
+    this.grid.printBoard();
   }
 
   checkWinner() {
@@ -35,3 +39,13 @@ class game {
     }
   }
 }
+
+var game = new Game();
+game.print();
+game.click(1, 1);
+game.print();
+game.click(0, 0);
+game.click(2, 2);
+game.print();
+
+module.exports = Game;
