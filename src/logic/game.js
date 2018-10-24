@@ -18,14 +18,20 @@ class game {
     } else {
       this.grid.changeBoard(row, col, this.x);
     }
-    this.turn = !this.turn;
     this.turnCounter++;
     if(this.turnCounter > 4) {
       this.checkWinner()
     }
+    this.turn = !this.turn;
   }
 
   checkWinner() {
-    this.grid.checkWinner();
+    if(this.grid.checkWinner()) {
+      if(this.turn) {
+        console.log("o wins");
+      } else {
+        console.log("x wins");
+      }
+    }
   }
 }

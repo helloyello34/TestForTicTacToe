@@ -24,7 +24,7 @@ class board {
   }
 
   checkWinner() {
-    return new player('p');
+    return false;
   }
 }
 
